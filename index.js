@@ -3,7 +3,7 @@
 function ignoreImports(state, startLine, endLine, silent) {
   var nextLine,
     token,
-    lineText,
+    lineText, // Define lineText variable
     pos = state.bMarks[startLine] + state.tShift[startLine],
     max = state.eMarks[startLine];
 
@@ -23,16 +23,12 @@ function ignoreImports(state, startLine, endLine, silent) {
   // Find the end of the import statement line
   nextLine = startLine + 1;
   while (nextLine < state.lineMax) {
-    lineText = state.getLines(nextLine, nextLine + 1, 0, false);
+    lineText = state.getLines(nextLine, nextLine + 1, 0, false); // Define lineText here
     if (lineText.trim().length === 0) break; // Stop at empty line
     nextLine++;
   }
 
   state.line = nextLine; // Update state.line to the next line
-
-  token = state.push("ignoreimports", "div", 0); // Add a token to the stream
-  token.block = true;
-  token.content = state.getLines(startLine, nextLine, 0, true); // Include the import statement content
 
   return true;
 }
