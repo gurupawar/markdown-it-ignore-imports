@@ -1,13 +1,23 @@
 {
   "name": "ignore-import",
   "version": "1.0.0",
-  "description": "",
+  "description": "Markdown-it plugin which adds the ability to igmpre react, js import statement whicha used in .mdx/md files.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "import",
+    "markdown",
+    "markdown-it",
+    "markdown-it-plugin",
+    "ignore-import-statements"
+  ],
+  "author": "Gurushesh Pawar",
+  "repository": "https://github.com/gurupawar/markdown-it-ignore-import",
+  "license": "MIT",
+  "dependencies": {
+    "markdown-it": "^14.1.0"
+  }
 }
