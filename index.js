@@ -18,7 +18,7 @@ function ignoreImports(state, startLine, endLine, silent) {
 
   if (silent) {
     return true;
-  } // don't run any pairs in validation mode
+  }
 
   // Find the end of the import statement line
   nextLine = startLine + 1;
