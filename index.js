@@ -3,7 +3,7 @@
 function ignoreImports(state, startLine, endLine, silent) {
   var nextLine,
     token,
-    lineText, // Define lineText variable
+    lineText,
     pos = state.bMarks[startLine] + state.tShift[startLine],
     max = state.eMarks[startLine];
 
