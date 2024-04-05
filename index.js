@@ -20,7 +20,6 @@ function ignoreImports(state, startLine, endLine, silent) {
     return true;
   }
 
-  // Find the end of the import statement line
   nextLine = startLine + 1;
   while (nextLine < state.lineMax) {
     lineText = state.getLines(nextLine, nextLine + 1, 0, false); // Define lineText here
