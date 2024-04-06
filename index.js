@@ -7,7 +7,6 @@ function ignoreImports(state, startLine, endLine, silent) {
     pos = state.bMarks[startLine] + state.tShift[startLine],
     max = state.eMarks[startLine];
 
-  // If it's not the start of a line or if the line is empty, return false
   if (
     pos >= max ||
     state.src.charCodeAt(pos) !== 0x69 /* i */ ||
