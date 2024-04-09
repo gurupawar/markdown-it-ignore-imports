@@ -26,7 +26,7 @@ function ignoreImports(state, startLine, endLine, silent) {
     nextLine++;
   }
 
-  state.line = nextLine; // Update state.line to the next line
+  state.line = nextLine; 
 
   return true;
 }
