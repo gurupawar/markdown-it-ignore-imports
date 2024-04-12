@@ -1,3 +1,4 @@
+// For test only
 const md = require("markdown-it")();
 const ignore_imports_plugin = require("../index.js");
 
