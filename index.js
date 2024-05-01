@@ -1,34 +1,22 @@
-"use strict";
+use strict";
 
 function ignoreImports(state, startLine, endLine, silent) {
-  var nextLine,
-    token,
+  let nextLine,
     lineText,
     pos = state.bMarks[startLine] + state.tShift[startLine],
     max = state.eMarks[startLine];
 
-  if (
-    pos >= max ||
-    state.src.charCodeAt(pos) !== 0x69 /* i */ ||
-    state.src.substr(pos, 6) !== "import"
-  ) {
-    return false;
-  }
-
-  if (silent) {
+  // Check if the line starts with "import"
+  if (state.src.substr(pos, 6) === "import") {
+    // if (!silent) {
+    //   console.log("Removed import line:", state.src.slice(pos, max));
+    // }
+    // Skip the line
+    state.line++;
     return true;
   }
 
-  nextLine = startLine + 1;
-  while (nextLine < state.lineMax) {
-    lineText = state.getLines(nextLine, nextLine + 1, 0, false); // Define lineText here
-    if (lineText.trim().length === 0) break; // Stop at empty line
-    nextLine++;
-  }
-
-  state.line = nextLine; 
-
-  return true;
+  return false;
 }
 
 module.exports = function ignore_imports_plugin(md) {
