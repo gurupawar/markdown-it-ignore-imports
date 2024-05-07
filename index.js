@@ -1,5 +1,6 @@
 use strict";
 
+// Function for Ignoring Inport statement in md/mdx files
 function ignoreImports(state, startLine, endLine, silent) {
   let nextLine,
     lineText,
