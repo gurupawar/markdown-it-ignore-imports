@@ -1,6 +1,6 @@
 # markdown-it-ignore-import
 
-A Markdown-it plugin to ignore import statements in Markdown files. This plugin filters out lines that start with `import`, allowing you to clean up Markdown content where import statements are not needed.
+A Markdown-it plugin that allows you to ignore JavaScript import statements in MDX files.
 
 ## Install
 
